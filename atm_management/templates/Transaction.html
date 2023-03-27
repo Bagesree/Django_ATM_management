@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/accountdetails.css' %}">
+    <title>Title</title>
+</head>
+<body>
+<div style="text-align:center;">
+<label style="color:dark;">Search</label>
+    <form class="search" action="{% url 'search' %}" method="get">
+        <input name="q" class="fas fa-search" type="text" autocomplete="off" placeholder="Click to search">
+    </form>
+</div>
+<div style="text-align:center;">
+  <h2>Transaction History</h2>
+</div>
+  <table>
+    <tr>
+      <th>Date and Time</th>
+      <th>Debit</th>
+      <th>Credit</th>
+      <th>Balance</th>
+    </tr>
+    {% for transaction in transactions %}
+    <tr>
+      <td>{{ transaction.Date_and_time }}</td>
+      <td>{% if transaction.Debit %}{{ transaction.Debit }}{% endif %}</td>
+      <td>{% if transaction.Credit %}{{ transaction.Credit }}{% endif %}</td>
+      <td>{{ transaction.Balance }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
+{% endblock content %}

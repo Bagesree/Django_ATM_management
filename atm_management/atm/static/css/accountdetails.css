@@ -1,0 +1,35 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align:center;
+}
+
+table td {
+  padding: 12px;
+
+
+  font-size:17px;
+}
+
+table tr:nth-child(even) {
+  background-color: #A6A0A0;
+}
+
+/*table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #4CAF50;
+  color: white;
+  text-align: left;
+}
+*/
+h2{
+text-align:center;
+padding-top:20px;
+padding-bottom:20px;}
+
+p{
+text-align:center;
+}

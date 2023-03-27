@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/accountdetails.css' %}">
+    <title>Account Details</title>
+</head>
+<body>
+<h2>Account details</h2>
+    <table>
+        {% for obj in my_objects %}
+        <tr>
+            <td> Ac_No: {{ obj.Ac_NO }} </td>
+        </tr>
+        <tr>
+            <td>IFSC: {{ obj.IFSC }}</td>
+        </tr>
+        <tr>
+            <td>Ac_type: {{ obj.Ac_type }}</td>
+        </tr>
+        <tr>
+            <td>Balance: {{ obj.Balance }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+<br><br>
+<p>Change Password <a href="{% url 'change-password' %}"><button type="submit" class="btn btn-primary">Click Here</button></a></p>
+<p>Delete Account <a href="{% url 'delete' %}"><button type="submit" class="btn btn-primary">Click Here</button></a></p>
+<p>Transaction History <a href="{% url 'transaction' %}"><button type="submit" class="btn btn-primary">Click Here</button></a></p>
+
+
+</body>
+</html>
+{% endblock content %}
